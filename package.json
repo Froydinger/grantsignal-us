@@ -1,0 +1,22 @@
+{
+  "name": "grantsignal-us-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A minimal x402 buyer example for Greater Good Grants / GrantSignal US.",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@x402/core": "2.24.0",
+    "@x402/evm": "2.24.0",
+    "@x402/fetch": "2.24.0",
+    "viem": "2.56.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "5.9.3"
+  }
+}
