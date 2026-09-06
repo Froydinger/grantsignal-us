@@ -17,14 +17,14 @@ No API key is required. Calls settle in USDC on Base mainnet using x402 v2.
 
 | Route | Purpose | Price |
 |---|---|---:|
-| \`POST or GET /v1/grants/search\` | Current opportunity search | $5.00 |
-| \`POST or GET /v1/grants/detail\` | Official opportunity detail | $5.00 |
-| \`POST or GET /v1/grants/fit\` | Transparent mission-fit ranking | $5.00 |
-| \`POST or GET /v1/grants/brief\` | Sourced application-research brief | $5.00 |
-| \`POST or GET /v1/grants/preflight\` | Deterministic shortlist preflight | $5.00 |
-| \`POST /v1/grants/pass\` | Non-renewing 30-day pass, up to 1,000 calls | $15.00 |
+| `POST or GET /v1/grants/search` | Current opportunity search | $5.00 |
+| `POST or GET /v1/grants/detail` | Official opportunity detail | $5.00 |
+| `POST or GET /v1/grants/fit` | Transparent mission-fit ranking | $5.00 |
+| `POST or GET /v1/grants/brief` | Sourced application-research brief | $5.00 |
+| `POST or GET /v1/grants/preflight` | Deterministic shortlist preflight | $5.00 |
+| `POST /v1/grants/pass` | Non-renewing 30-day pass, up to 1,000 calls | $15.00 |
 
-Prices in this table mirror the current live catalog. The HTTP 402 response and its \`PAYMENT-REQUIRED\` header are authoritative for each request.
+Prices in this table mirror the current live catalog. The HTTP 402 response and its `PAYMENT-REQUIRED` header are authoritative for each request.
 
 ## Inspect before paying
 
@@ -32,7 +32,7 @@ Prices in this table mirror the current live catalog. The HTTP 402 response and 
 curl -i -X POST https://genuinegood.online/v1/grants/search -H 'content-type: application/json' -d '{"keyword":"rural clean water","statuses":["posted","forecasted"],"rows":5}'
 ~~~
 
-The unpaid request returns HTTP \`402\` with a \`PAYMENT-REQUIRED\` challenge. An x402-compatible client signs the quoted EIP-3009 authorization and retries the identical request with \`PAYMENT-SIGNATURE\`. A successful retry returns JSON plus \`PAYMENT-RESPONSE\`.
+The unpaid request returns HTTP `402` with a `PAYMENT-REQUIRED` challenge. An x402-compatible client signs the quoted EIP-3009 authorization and retries the identical request with `PAYMENT-SIGNATURE`. A successful retry returns JSON plus `PAYMENT-RESPONSE`.
 
 ## JavaScript buyer
 
