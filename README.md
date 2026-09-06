@@ -1,51 +1,49 @@
-# GrantSignal US
+# Genuine Good Grants API
 
-Account-free, pay-per-call U.S. federal grant discovery for AI agents. GrantSignal turns current Grants.gov public records into structured search, official opportunity detail, transparent mission-fit scoring, sourced briefs, and deterministic shortlist checks.
+Account-free, pay-per-call U.S. federal grant discovery for AI agents. Genuine Good Grants turns current Grants.gov public records into structured search, official opportunity detail, transparent mission-fit scoring, sourced briefs, and deterministic shortlist checks.
 
 No API key is required. Calls settle in USDC on Base mainnet using x402 v2.
 
 ## Start here
 
-- Agent instructions: https://greatergood.site/skill.md
-- Quickstart: https://greatergood.site/grants/quickstart
-- OpenAPI 3.1: https://greatergood.site/openapi.json
-- x402 manifest: https://greatergood.site/.well-known/x402
-- Free $5-result preview: https://greatergood.site/api/grants/preflight-sample
-- Human overview: https://greatergood.site/grants
+- Agent instructions: https://genuinegood.online/skill.md
+- Quickstart: https://genuinegood.online/grants/quickstart
+- OpenAPI 3.1: https://genuinegood.online/openapi.json
+- x402 manifest: https://genuinegood.online/.well-known/x402
+- Free $5-result preview: https://genuinegood.online/api/grants/preflight-sample
+- Human overview: https://genuinegood.online/grants
 
 ## Pricing
 
 | Route | Purpose | Price |
 |---|---|---:|
-| `POST /v1/grants/search` | Current opportunity search | $0.05 |
-| `GET /v1/grants/opportunities/:id` | Official opportunity detail | $0.08 |
-| `POST /v1/grants/fit` | Transparent mission-fit ranking | $0.20 |
-| `POST /v1/grants/brief` | Sourced application-research brief | $0.50 |
-| `POST /v1/grants/preflight` | Deterministic shortlist preflight | $5.00 |
-| `POST /v1/grants/pass` | 30-day pass, up to 1,000 calls | $15.00 |
+| \`POST or GET /v1/grants/search\` | Current opportunity search | $5.00 |
+| \`POST or GET /v1/grants/detail\` | Official opportunity detail | $5.00 |
+| \`POST or GET /v1/grants/fit\` | Transparent mission-fit ranking | $5.00 |
+| \`POST or GET /v1/grants/brief\` | Sourced application-research brief | $5.00 |
+| \`POST or GET /v1/grants/preflight\` | Deterministic shortlist preflight | $5.00 |
+| \`POST /v1/grants/pass\` | Non-renewing 30-day pass, up to 1,000 calls | $15.00 |
 
-Prices are quoted by the live HTTP 402 response and remain authoritative.
+Prices in this table mirror the current live catalog. The HTTP 402 response and its \`PAYMENT-REQUIRED\` header are authoritative for each request.
 
 ## Inspect before paying
 
-```bash
-curl -i -X POST https://greatergood.site/v1/grants/search \
-  -H 'content-type: application/json' \
-  -d '{"keyword":"rural clean water","statuses":["posted","forecasted"],"rows":5}'
-```
+~~~bash
+curl -i -X POST https://genuinegood.online/v1/grants/search -H 'content-type: application/json' -d '{"keyword":"rural clean water","statuses":["posted","forecasted"],"rows":5}'
+~~~
 
-The unpaid request returns HTTP `402` with a `PAYMENT-REQUIRED` challenge. An x402-compatible client signs the quoted EIP-3009 authorization and retries the identical request with `PAYMENT-SIGNATURE`.
+The unpaid request returns HTTP \`402\` with a \`PAYMENT-REQUIRED\` challenge. An x402-compatible client signs the quoted EIP-3009 authorization and retries the identical request with \`PAYMENT-SIGNATURE\`. A successful retry returns JSON plus \`PAYMENT-RESPONSE\`.
 
 ## JavaScript buyer
 
 Install the x402 client packages and use [examples/search.ts](examples/search.ts):
 
-```bash
+~~~bash
 npm install @x402/core @x402/evm @x402/fetch viem
 EVM_PRIVATE_KEY=0x... npx tsx examples/search.ts
-```
+~~~
 
-The private key remains in the buyer process. GrantSignal receives only the x402 payment payload required to settle the request.
+The example sets x402's spend cap to $15 so it can cover the highest-priced pass. A buyer needs an EVM wallet with USDC on Base mainnet and a small amount of ETH on Base for gas. A Bitcoin-only wallet cannot sign this payment. The private key remains in the buyer process; Genuine Good receives only the x402 payment payload required to settle the request.
 
 ## Response principles
 
@@ -54,8 +52,8 @@ The private key remains in the buyer process. GrantSignal receives only the x402
 - A match is not an award prediction, legal advice, or government endorsement.
 - Live issuing-agency notices remain controlling.
 
-GrantSignal is an independent Greater Good Grants product and is not affiliated with or endorsed by Grants.gov or any U.S. agency.
+Genuine Good Grants is an independent product and is not affiliated with or endorsed by Grants.gov or any U.S. agency.
 
 ## Publisher
 
-Greater Good Publishing by Win The Night™ Foundation. News for the love of humanity.
+Genuine Good News by Win The Night™ Foundation. News for the love of humanity.
