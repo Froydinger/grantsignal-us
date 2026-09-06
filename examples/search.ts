@@ -3,7 +3,7 @@ import { ExactEvmScheme } from "@x402/evm/exact/client";
 import { wrapFetchWithPayment, x402HTTPClient } from "@x402/fetch";
 import { privateKeyToAccount } from "viem/accounts";
 
-const privateKey = process.env.EVM_PRIVATE_KEY as \`0x\${string}\` | undefined;
+const privateKey = process.env.EVM_PRIVATE_KEY as `0x${string}` | undefined;
 if (!privateKey) throw new Error("Set EVM_PRIVATE_KEY in your secret manager.");
 
 const signer = privateKeyToAccount(privateKey);
