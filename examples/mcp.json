@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "genuine-good-grants": {
+      "type": "http",
+      "url": "https://genuinegood.online/api/grants/mcp"
+    }
+  }
+}
