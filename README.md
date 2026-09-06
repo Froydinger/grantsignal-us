@@ -1,17 +1,22 @@
 # Genuine Good Grants API
 
-Account-free, pay-per-call U.S. federal grant discovery for AI agents. Genuine Good Grants turns current Grants.gov public records into structured search, official opportunity detail, transparent mission-fit scoring, sourced briefs, and deterministic shortlist checks.
+Account-free, pay-per-call U.S. federal grant discovery for AI agents, grant software, and small research teams. Genuine Good Grants turns current Grants.gov public records into structured search, official opportunity detail, transparent mission-fit scoring, sourced briefs, and deterministic shortlist checks.
 
 No API key is required. Calls settle in USDC on Base mainnet using x402 v2.
 
 ## Start here
 
+- Agent overview: https://genuinegood.online/grants/agents
 - Agent instructions: https://genuinegood.online/skill.md
 - Quickstart: https://genuinegood.online/grants/quickstart
 - OpenAPI 3.1: https://genuinegood.online/openapi.json
 - x402 manifest: https://genuinegood.online/.well-known/x402
 - Free $5-result preview: https://genuinegood.online/api/grants/preflight-sample
 - Human overview: https://genuinegood.online/grants
+
+## Choose the first call
+
+If you already have one to five Grants.gov opportunity IDs, start with the free preview to inspect the output shape, then use the $5 preflight. If you are building a repeated research workflow, the non-renewing $15 pass covers 30 days or 1,000 calls, whichever comes first.
 
 ## Pricing
 
@@ -43,7 +48,7 @@ npm install @x402/core @x402/evm @x402/fetch viem
 EVM_PRIVATE_KEY=0x... npx tsx examples/search.ts
 ~~~
 
-The example sets x402's spend cap to $15 so it can cover the highest-priced pass. A buyer needs an EVM wallet with USDC on Base mainnet and a small amount of ETH on Base for gas. A Bitcoin-only wallet cannot sign this payment. The private key remains in the buyer process; Genuine Good receives only the x402 payment payload required to settle the request.
+The example sets x402's spend cap to $15 so it can cover the highest-priced pass. A buyer needs an EVM wallet with USDC on Base mainnet and a small amount of ETH on Base for gas. A BTC/BCH-only wallet cannot sign this payment; a multichain wallet with Base enabled can. The private key remains in the buyer process; Genuine Good receives only the x402 payment payload required to settle the request.
 
 ## Response principles
 
