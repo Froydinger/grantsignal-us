@@ -10,6 +10,8 @@ No API key is required. Calls settle in USDC on Base mainnet using x402 v2.
 - Agent instructions: https://genuinegood.online/skill.md
 - Quickstart: https://genuinegood.online/grants/quickstart
 - OpenAPI 3.1: https://genuinegood.online/openapi.json
+- Remote MCP (Streamable HTTP): https://genuinegood.online/api/grants/mcp
+- MCP Registry descriptor: https://github.com/Froydinger/grantsignal-us/blob/main/server.json
 - x402 manifest: https://genuinegood.online/.well-known/x402
 - Free $5-result preview: https://genuinegood.online/api/grants/preflight-sample
 - Human overview: https://genuinegood.online/grants
