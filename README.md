@@ -14,6 +14,14 @@ No API key is required. Calls settle in USDC on Base mainnet using x402 v2.
 - Free $5-result preview: https://genuinegood.online/api/grants/preflight-sample
 - Human overview: https://genuinegood.online/grants
 
+## Discovery and verification
+
+- Live 402 Index directory: https://402index.io/directory?q=genuinegood.online
+- x402scan listing request: https://github.com/Merit-Systems/x402scan/issues/1163
+- Public API source: https://github.com/Froydinger/grantsignal-us
+
+These links are provided for discovery and independent verification. Directory review and indexing status are controlled by the directory maintainers.
+
 ## Choose the first call
 
 If you already have one to five Grants.gov opportunity IDs, start with the free preview to inspect the output shape, then use the $5 preflight. If you are building a repeated research workflow, the non-renewing $15 pass covers 30 days or 1,000 calls, whichever comes first.
