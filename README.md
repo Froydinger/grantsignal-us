@@ -50,6 +50,29 @@ curl -i -X POST https://genuinegood.online/v1/grants/search -H 'content-type: ap
 
 The unpaid request returns HTTP `402` with a `PAYMENT-REQUIRED` challenge. An x402-compatible client signs the quoted EIP-3009 authorization and retries the identical request with `PAYMENT-SIGNATURE`. A successful retry returns JSON plus `PAYMENT-RESPONSE`.
 
+## Use from an MCP client
+
+The hosted Streamable HTTP server exposes the grants tools at:
+
+~~~text
+https://genuinegood.online/api/grants/mcp
+~~~
+
+VS Code and GitHub Copilot users can add it with this configuration:
+
+~~~json
+{
+  "servers": {
+    "genuine-good-grants": {
+      "type": "http",
+      "url": "https://genuinegood.online/api/grants/mcp"
+    }
+  }
+}
+~~~
+
+A ready-to-copy version is available at [examples/mcp.json](examples/mcp.json). The server can list its tools without an API key. Paid tool calls return an x402 challenge containing the current USDC price and Base settlement details.
+
 ## JavaScript buyer
 
 Install the x402 client packages and use [examples/search.ts](examples/search.ts):
