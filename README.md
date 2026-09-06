@@ -16,11 +16,12 @@ No API key is required. Calls settle in USDC on Base mainnet using x402 v2.
 
 ## Discovery and verification
 
+- AgentCash-compatible OpenAPI: https://genuinegood.online/openapi.json
 - Live 402 Index directory: https://402index.io/directory?q=genuinegood.online
 - x402scan listing request: https://github.com/Merit-Systems/x402scan/issues/1163
 - Public API source: https://github.com/Froydinger/grantsignal-us
 
-These links are provided for discovery and independent verification. Directory review and indexing status are controlled by the directory maintainers.
+The OpenAPI document includes machine-readable x402 pricing metadata, and the paid routes return the expected HTTP 402 challenge before payment. These links are provided for discovery and independent verification. Directory review and indexing status are controlled by the directory maintainers.
 
 ## Choose the first call
 
