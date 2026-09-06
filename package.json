@@ -1,9 +1,9 @@
 {
-  "name": "grantsignal-us-example",
+  "name": "genuine-good-grants-api-example",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "A minimal x402 buyer example for Greater Good Grants / GrantSignal US.",
+  "description": "A minimal x402 buyer example for the Genuine Good Grants API.",
   "license": "MIT",
   "scripts": {
     "typecheck": "tsc --noEmit"
